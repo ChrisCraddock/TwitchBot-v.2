@@ -4,15 +4,14 @@
 Python Twitch bot (MainBot.py)
 	Copyright © Parafoxia 2020.
 	Copyright © Carberra 2020.
-    Copyright © FuzzybuttGames 2020.
-This bot was created on the Carberra YouTube channel. The tutorial series it featured in can be found here:
-	https://www.youtube.com/playlist?list=PLYeOw6sTSy6ZFDkfO9Kl8d37H_3wLyNxO
+        Copyright © FuzzybuttGames 2020.
+
 This bot can be freely copied and modified without permission, but not sold as is.
 Some code in this file is licensed under the Apache License, Version 2.0.
     http://aws.amazon.com/apache2.0/
 	NOTES
 	-----
-You will obviously need to modify `NAME`, `OWNER`, `bot.CLIENT_ID`, and `bot.TOKEN` to your own info before running the bot.
+You will obviously need to modify NO_SHARE.py and Line 37 to your own info before running the bot.
 Otherwise, the modifications to this code, and all the code in the /lib directory, are copyright © FuzzybuttGames 2020.
 """
 from twitchAPI.twitch import Twitch
@@ -35,7 +34,7 @@ class Bot(SingleServerIRCBot):
         self.TOKEN = NO_SHARE.BOT_TOKEN #My bots Token
         self.CHANNEL = f"#{OWNER}"
 
-        user_info = twitch.get_users(logins=['fuzziestfuzzy'])
+        user_info = twitch.get_users(logins=['<bot name>'])
         user_id = user_info['data'][0]['id']
 
         super().__init__([(self.HOST, self.PORT, f"oauth:{self.TOKEN}")], self.USERNAME, self.USERNAME)
